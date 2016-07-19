@@ -73,9 +73,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea1f42271728a4642ad2cdd43cc8d1b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: 10
-  jumpForce: 700
-  groundCheck: {fileID: 0}
+  maxSpeed: 5
+  jumpForce: 450
+  groundCheck: {fileID: 473670}
   groundRadius: 0.32
   whatIsGround:
     serializedVersion: 2

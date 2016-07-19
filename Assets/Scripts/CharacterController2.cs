@@ -23,8 +23,6 @@ public class CharacterController2 : MonoBehaviour
 	private void FixedUpdate()
 	{
 		grounded = Physics2D.OverlapCircle(groundCheck.position, groundRadius, whatIsGround);
-
-		move = Input.GetAxis("Horizontal");
 	}
 
 	private void Update()
@@ -34,6 +32,13 @@ public class CharacterController2 : MonoBehaviour
 			rigidbody2D.AddForce(new Vector2(0f, jumpForce));
 		}
 		rigidbody2D.velocity = new Vector2(move * maxSpeed, GetComponent<Rigidbody2D>().velocity.y);
+
+		if (Input.GetKey(KeyCode.A))
+			move = -1;
+		else if (Input.GetKey(KeyCode.D))
+			move = 1;
+		else
+			move = 0;
 
 		if (move > 0 && !facingRight)
 			Flip();
@@ -65,7 +70,7 @@ public class CharacterController2 : MonoBehaviour
 	private void Flip()
 	{
 		facingRight = !facingRight;
-		Vector3 theScale = transform.localScale;
+		var theScale = transform.localScale;
 		theScale.x *= -1;
 		transform.localScale = theScale;
 	}
