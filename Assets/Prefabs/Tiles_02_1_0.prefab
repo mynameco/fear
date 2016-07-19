@@ -10,7 +10,7 @@ GameObject:
   - 4: {fileID: 494802}
   - 212: {fileID: 21230600}
   - 61: {fileID: 6189538}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tiles_02_1_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}

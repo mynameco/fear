@@ -174,17 +174,9 @@ Prefab:
       propertyPath: groundCheck
       value: 
       objectReference: {fileID: 1879722781}
-    - target: {fileID: 5032718, guid: c826d883bfee03e4082e2c7688a020a5, type: 2}
-      propertyPath: m_Constraints
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 11458978, guid: c826d883bfee03e4082e2c7688a020a5, type: 2}
-      propertyPath: groundRadius
-      value: 0.32
-      objectReference: {fileID: 0}
     - target: {fileID: 11458978, guid: c826d883bfee03e4082e2c7688a020a5, type: 2}
       propertyPath: whatIsGround.m_Bits
-      value: 1
+      value: 256
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c826d883bfee03e4082e2c7688a020a5, type: 2}
@@ -201,6 +193,7 @@ GameObject:
   - 92: {fileID: 959599787}
   - 124: {fileID: 959599786}
   - 81: {fileID: 959599785}
+  - 114: {fileID: 959599790}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -275,6 +268,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!114 &959599790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 959599784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6c16012e18048344aa2f756762b8c48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dampTime: 0.5
+  target: {fileID: 1879722781}
 --- !u!1001 &1654675221
 Prefab:
   m_ObjectHideFlags: 0

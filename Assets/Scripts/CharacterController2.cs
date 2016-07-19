@@ -9,8 +9,14 @@ public class CharacterController2 : MonoBehaviour
 	public Transform groundCheck;
 	public float groundRadius = 0.2f;
 	public LayerMask whatIsGround;
+	private Rigidbody2D rigidbody2D;
 
 	public float move;
+
+	private void Awake()
+	{
+		rigidbody2D = GetComponent<Rigidbody2D>();
+	}
 
 	private void FixedUpdate()
 	{
@@ -21,11 +27,11 @@ public class CharacterController2 : MonoBehaviour
 
 	private void Update()
 	{
-		if (grounded && (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)))
+		if (grounded && (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.Space)))
 		{
-			GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, jumpForce));
+			rigidbody2D.AddForce(new Vector2(0f, jumpForce));
 		}
-		GetComponent<Rigidbody2D>().velocity = new Vector2(move * maxSpeed, GetComponent<Rigidbody2D>().velocity.y);
+		rigidbody2D.velocity = new Vector2(move * maxSpeed, GetComponent<Rigidbody2D>().velocity.y);
 
 		if (move > 0 && !facingRight)
 			Flip();
@@ -38,10 +44,10 @@ public class CharacterController2 : MonoBehaviour
 			Application.Quit();
 		}
 
-		if (Input.GetKey(KeyCode.R))
+		/*if (Input.GetKey(KeyCode.R))
 		{
 			Application.LoadLevel(Application.loadedLevel);
-		}
+		}*/
 	}
 
 	private void Flip()

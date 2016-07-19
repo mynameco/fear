@@ -47,7 +47,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!58 &5846690
 CircleCollider2D:
   m_ObjectHideFlags: 1
@@ -76,10 +76,10 @@ MonoBehaviour:
   maxSpeed: 10
   jumpForce: 700
   groundCheck: {fileID: 0}
-  groundRadius: 0.2
+  groundRadius: 0.32
   whatIsGround:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
   move: 0
 --- !u!212 &21219286
 SpriteRenderer:
