@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CharacterController2 : MonoBehaviour
 {
@@ -9,7 +10,8 @@ public class CharacterController2 : MonoBehaviour
 	public Transform groundCheck;
 	public float groundRadius = 0.2f;
 	public LayerMask whatIsGround;
-	private Rigidbody2D rigidbody2D;
+
+	private new Rigidbody2D rigidbody2D;
 
 	public float move;
 
@@ -41,13 +43,23 @@ public class CharacterController2 : MonoBehaviour
 
 		if (Input.GetKey(KeyCode.Escape))
 		{
+#if UNITY_EDITOR
+			UnityEditor.EditorApplication.isPlaying = false;
+#else
 			Application.Quit();
+#endif
 		}
 
-		/*if (Input.GetKey(KeyCode.R))
+		if (Input.GetKey(KeyCode.R))
 		{
-			Application.LoadLevel(Application.loadedLevel);
-		}*/
+			SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+		}
+	}
+
+	private void OnTriggerEnter2D(Collider2D col)
+	{
+		if (col.gameObject.layer == LayerMask.NameToLayer("Dead"))
+			SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 	}
 
 	private void Flip()
